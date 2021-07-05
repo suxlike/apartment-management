@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="index.js" type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="./index.js" type="module"></script>
+    <title>Apartment Manager</title>
+  </head>
+  <body>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAzfK_D7PuvCcvbFvsCtcWPPDoAC2iD2Ps",
+        authDomain: "royal-residence-manager.firebaseapp.com",
+        projectId: "royal-residence-manager",
+        storageBucket: "royal-residence-manager.appspot.com",
+        messagingSenderId: "848265871263",
+        appId: "1:848265871263:web:b6240ee31839e686da07aa",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <div class="content">
+      <div class="resident-div">
+        <label for="resident-input">No</label>
+        <input class="resident-input" type="text" />
+        <button class="get-resident-button">Getir</button>
+        <div class="resident-card">
+          <div class="resident-card-header">
+            <span class="resident-id">ID</span>
+            <button class="resident-update-button">
+              Bilgileri <br />duzenle
+            </button>
+          </div>
+          <div class="due-div">
+            <span class="due-title">Aidat Durumu</span>
+            <span class="jan">Ocak</span>
+            <span class="feb">Subat</span>
+            <span class="mar">Mart</span>
+            <span class="apr">Nisan</span>
+            <span class="may">Mayis</span>
+            <span class="jun">Haziran</span>
+            <span class="jul">Temmuz</span>
+            <span class="aug">Ogustos</span>
+            <span class="sep">Eylul</span>
+            <span class="oct">Ekim</span>
+            <span class="nov">Kasim</span>
+            <span class="dec">Aralik</span>
+          </div>
+          <div class="resident-card-body">
+            <span class="resident-info">isim soyisim telefon</span>
+          </div>
+          <div class="resident-card-footer">
+            <select name="month" class="due-month">
+              <option value="">Ay Secin</option>
+              <option value="jan">Ocak</option>
+              <option value="feb">Subat</option>
+              <option value="mar">Mart</option>
+              <option value="apr">Nisan</option>
+              <option value="may">Mayis</option>
+              <option value="jun">Haziran</option>
+              <option value="jul">Temmuz</option>
+              <option value="aug">Agustos</option>
+              <option value="sep">Eylul</option>
+              <option value="oct">Ekim</option>
+              <option value="nov">Kasim</option>
+              <option value="dec">Aralik</option>
+            </select>
+
+            <input class="due-input" type="text" />
+            <button class="due-button">Aidat gir</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
