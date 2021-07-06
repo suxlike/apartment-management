@@ -7,14 +7,14 @@
     font-size: ;
     font-family: ;
   } */
-body {
+/* body {
   width: 100%;
   min-height: 100vh;
-}
+} */
 .content {
-  height: 50vh;
+  width: 100%;
+  min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -75,4 +75,30 @@ body {
 }
 .due-input {
   width: 40px;
+}
+
+.expense-div {
+  border: 1px solid black;
+}
+.expense-card {
+  width: 500px;
+  height: 400px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  display: grid;
+}
+.set-expense-div {
+  grid-column: 1/2;
+  grid-row: 1/4;
+  display: flex;
+  flex-direction: column;
+}
+.expense-items-div {
+  grid-column: 2/4;
+  grid-row: 1/4;
+}
+.items-title {
+  font-weight: 600;
+  font-size: 24px;
+  
 }

@@ -6,6 +6,46 @@ const dueMonth = document.querySelector(".due-month");
 const updateDueButton = document.querySelector(".due-button");
 updateDueButton.addEventListener("click", updateDue);
 const dueInput = document.querySelector(".due-input");
+const expenseMonth = document.querySelector(".expense-month");
+const expenseDocInput = document.querySelector("#expense-doc-input");
+const expenseKeyInput = document.querySelector("#expense-key-input");
+const createExpenseButton = document.querySelector(".create-expense");
+createExpenseButton.addEventListener("click", createExpense);
+expenseMonth.addEventListener("input", getExpenses);
+
+async function createExpense() {
+  try {
+    await db
+      .collection("expenses")
+      .doc("2021")
+      .collection(`${expenseMonth.value}`)
+      .doc(`${expenseDocInput.value}`)
+      .set({
+        key: `${expenseKeyInput.value}`,
+      });
+    console.log("Document successfully written!");
+  } catch (err) {
+    console.log("Error writing document: ", err);
+  }
+}
+
+async function getExpenses(e) {
+  try {
+    let expenses = await db
+      .collection("expenses")
+      .doc(`2021`)
+      .collection(`${e.target.value}`)
+      .get();
+    expenses.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      console.log(`${doc.id}`);
+      // document.querySelector(`.${doc.id}`).textContent = `${doc.id}:
+      // ${doc.data().due}`;
+    });
+  } catch (err) {
+    console.log("Error getting document:", err);
+  }
+}
 
 function getResident() {
   const inputValue = document.querySelector(".resident-input").value;

@@ -27,6 +27,37 @@
     </script>
 
     <div class="content">
+      <div class="expense-div">
+        <div class="expense-card">
+          <div class="set-expense-div">
+            <h1>Masraflar</h1>
+            <select name="month" class="expense-month">
+              <option value="">Ay Secin</option>
+              <option value="jan">Ocak</option>
+              <option value="feb">Subat</option>
+              <option value="mar">Mart</option>
+              <option value="apr">Nisan</option>
+              <option value="may">Mayis</option>
+              <option value="jun">Haziran</option>
+              <option value="jul">Temmuz</option>
+              <option value="aug">Agustos</option>
+              <option value="sep">Eylul</option>
+              <option value="oct">Ekim</option>
+              <option value="nov">Kasim</option>
+              <option value="dec">Aralik</option>
+            </select>
+            <label for="expense-doc-input">Kalem adi</label>
+            <input id="expense-doc-input" type="text" />
+            <label for="expense-key-input">Mafraf miktari</label>
+            <input id="expense-key-input" type="text" />
+            <button class="create-expense">Masraf Olustur</button>
+          </div>
+          <div class="expense-items-div">
+              <span class="items-title">Ay Secin</span>
+              
+          </div>
+        </div>
+      </div>
       <div class="resident-div">
         <label for="resident-input">No</label>
         <input class="resident-input" type="text" />
@@ -58,21 +89,20 @@
           </div>
           <div class="resident-card-footer">
             <select name="month" class="due-month">
-                <option value="">Ay Secin</option>
-                <option value="jan">Ocak</option>
-                <option value="feb">Subat</option>
-                <option value="mar">Mart</option>
-                <option value="apr">Nisan</option>
-                <option value="may">Mayis</option>
-                <option value="jun">Haziran</option>
-                <option value="jul">Temmuz</option>
-                <option value="aug">Agustos</option>
-                <option value="sep">Eylul</option>
-                <option value="oct">Ekim</option>
-                <option value="nov">Kasim</option>
-                <option value="dec">Aralik</option>
+              <option value="">Ay Secin</option>
+              <option value="jan">Ocak</option>
+              <option value="feb">Subat</option>
+              <option value="mar">Mart</option>
+              <option value="apr">Nisan</option>
+              <option value="may">Mayis</option>
+              <option value="jun">Haziran</option>
+              <option value="jul">Temmuz</option>
+              <option value="aug">Agustos</option>
+              <option value="sep">Eylul</option>
+              <option value="oct">Ekim</option>
+              <option value="nov">Kasim</option>
+              <option value="dec">Aralik</option>
             </select>
-
             <input class="due-input" type="text" value="225" />
             <button class="due-button">Aidat gir</button>
           </div>
