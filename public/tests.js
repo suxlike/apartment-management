@@ -61,7 +61,7 @@
 //
 
 // Add a new document in collection "cities"
-// function 
+// function
 db.collection("expenses")
   .doc("2021")
   .collection(`${expenseMonth}`)
@@ -75,14 +75,54 @@ db.collection("expenses")
   .catch((error) => {
     console.error("Error writing document: ", error);
   });
+//
+//
+//
+//
+
+const due = db
+  .collection("residents")
+  .doc(`${id.textContent}`)
+  .collection("2021")
+  .doc(`${dueMonth.value}`);
+due
+  .update({
+    due: `${dueInput.value}`,
+  })
+  .then(() => {
+    console.log("Document successfully updated!");
+  })
+  .catch((error) => {
+    // The document probably doesn't exist.
+    console.error("Error updating document: ", error);
+  });
+
+async function updateDue() {
+  try {
+    await db
+      .collection("residents")
+      .doc(`${id.textContent}`)
+      .collection("2021")
+      .doc(`${dueInput.value}`)
+      .update({ due: `${dueInput.value}` });
+    console.log("Document successfully updated!");
+  } catch (err) {
+    console.log("Error getting document:", err);
+  }
+}
 // 
-// 
-// 
-// 
 
+db.collection("residents")
+    .doc(`${id.textContent}`)
+    .collection("2021")
+    .get()
+    .then((qs) => {
+      qs.forEach((doc) => {
+        console.log(doc.data().due);
+        // doc.data() is never undefined for query doc snapshots
+        document.querySelector(`.${doc.id}`).textContent = `${doc.id}: 
+        ${doc.data().due}`;
+      });
+    });
 
-
-
-
-
-
+    async function

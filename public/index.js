@@ -27,20 +27,30 @@ async function createExpense() {
   } catch (err) {
     console.log("Error writing document: ", err);
   }
+  getExpenses();
 }
 
-async function getExpenses(e) {
+async function getExpenses() {
+  document.querySelector(".items-title").textContent = `${expenseMonth.value}`;
+  const itemsSpan = document.querySelectorAll(".items span");
+  itemsSpan.forEach((item) => {
+    item.remove();
+  });
+  const items = document.querySelector(".items");
+  const createSpan = function (doc) {
+    const a = document.createElement("span");
+    items.append(a);
+    a.textContent = `${doc.id} ${doc.data().key}`;
+  };
   try {
     let expenses = await db
       .collection("expenses")
       .doc(`2021`)
-      .collection(`${e.target.value}`)
+      .collection(`${expenseMonth.value}`)
       .get();
     expenses.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
-      console.log(`${doc.id}`);
-      // document.querySelector(`.${doc.id}`).textContent = `${doc.id}:
-      // ${doc.data().due}`;
+      createSpan(doc);
     });
   } catch (err) {
     console.log("Error getting document:", err);
@@ -82,31 +92,26 @@ function getResident() {
     });
 }
 
-function updateDue() {
+async function updateDue() {
   const id = document.querySelector(`.resident-id`);
-  const due = db
-    .collection("residents")
-    .doc(`${id.textContent}`)
-    .collection("2021")
-    .doc(`${dueMonth.value}`);
-  due
-    .update({
-      due: `${dueInput.value}`,
-    })
-    .then(() => {
-      console.log("Document successfully updated!");
-    })
-    .catch((error) => {
-      // The document probably doesn't exist.
-      console.error("Error updating document: ", error);
-    });
-
+  try {
+    await db
+      .collection("residents")
+      .doc(`${id.textContent}`)
+      .collection("2021")
+      .doc(`${dueMonth.value}`)
+      .update({ due: `${dueInput.value}` });
+    console.log("Document successfully updated!");
+  } catch (err) {
+    console.log("Error getting document:", err);
+  }
   db.collection("residents")
     .doc(`${id.textContent}`)
     .collection("2021")
     .get()
     .then((qs) => {
       qs.forEach((doc) => {
+        console.log(doc.data().due);
         // doc.data() is never undefined for query doc snapshots
         document.querySelector(`.${doc.id}`).textContent = `${doc.id}: 
         ${doc.data().due}`;
