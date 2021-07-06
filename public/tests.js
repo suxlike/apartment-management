@@ -43,3 +43,18 @@
 // }).catch((error) => {
 //     console.log("Error getting document:", error);
 // });
+
+// update
+var washingtonRef = db.collection("cities").doc("DC");
+
+// Set the "capital" field of the city 'DC'
+return washingtonRef.update({
+    capital: true
+})
+.then(() => {
+    console.log("Document successfully updated!");
+})
+.catch((error) => {
+    // The document probably doesn't exist.
+    console.error("Error updating document: ", error);
+});

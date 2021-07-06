@@ -73,3 +73,6 @@ body {
   grid-column: 1/3;
   grid-row: 3/4;
 }
+.due-input {
+  width: 40px;
+}
