@@ -1,5 +1,5 @@
 export async function getDues() {
-  const db = firebase.firestore(); 
+  const db = firebase.firestore();
   const id = document.querySelector(`.resident-id`);
   try {
     const dues = await db

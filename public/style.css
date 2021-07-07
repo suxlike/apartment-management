@@ -74,7 +74,7 @@
   grid-row: 3/4;
 }
 .due-input {
-  width: 40px;
+  width: 60px;
 }
 
 .expense-div {
@@ -83,9 +83,9 @@
 .expense-card {
   width: 500px;
   height: 400px;
+  display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
-  display: grid;
 }
 .set-expense-div {
   grid-column: 1/2;
@@ -94,6 +94,10 @@
   flex-direction: column;
 }
 .expense-items-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   grid-column: 2/4;
   grid-row: 1/4;
 }
@@ -102,8 +106,8 @@
   font-size: 24px;
 }
 .items {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .update-res-div {
@@ -114,4 +118,10 @@
 }
 .resident-card-footer {
   display: none;
+}
+/* .expense-total {
+} */
+.due-button {
+  display: none;
+  padding: 4px;
 }

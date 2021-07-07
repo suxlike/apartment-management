@@ -10,7 +10,7 @@ export async function updateDue() {
       .doc(`${id.textContent}`)
       .collection("2021")
       .doc(`${dueMonth.value}`)
-      .update({ due: `${dueInput.value}` });
+      .set({ due: `${dueInput.value}` });
     console.log("Document successfully updated!");
   } catch (err) {
     console.log("Error getting document:", err);
