@@ -16,10 +16,7 @@ function init() {
   document
     .querySelector(".create-expense")
     .addEventListener("click", createExpense);
+  document
+    .querySelector(".resident-update-button")
+    .addEventListener("click", updateResButton);
 }
-
-document
-  .querySelector(".resident-update-button")
-  .addEventListener("click", updateResButton);
-
-
