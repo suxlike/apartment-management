@@ -52,9 +52,9 @@
   font: 1.3em sans-serif;
   font-weight: 600;
 }
-/* .resident-update-button {
- 
-} */
+.resident-update-button {
+  display: none;
+}
 .due-div {
   display: flex;
   flex-direction: column;
@@ -105,14 +105,13 @@
   display: flex;
   flex-direction: column;
 }
-/* .items span {
 
-} */
-
-#update-name {
+.update-res-div {
   display: none;
 }
-
-#update-tel {
+.ex-box {
+  display: none;
+}
+.resident-card-footer {
   display: none;
 }

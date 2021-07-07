@@ -46,11 +46,13 @@
               <option value="Kasim">Kasim</option>
               <option value="Aralik">Aralik</option>
             </select>
+            <div class="ex-box">
             <label for="expense-doc-input">Gider adi</label>
             <input id="expense-doc-input" type="text" />
             <label for="expense-key-input">Gider miktari</label>
             <input id="expense-key-input" type="text" />
             <button class="create-expense">Gider Olustur</button>
+          </div>
           </div>
           <div class="expense-items-div">
             <span class="items-title">Ay Secin</span>
@@ -64,9 +66,9 @@
         <button class="get-resident-button">Getir</button>
         <div class="resident-card">
           <div class="resident-card-header">
-            <span class="resident-id">ID</span>
+            <span class="resident-id">Blok No Gir</span>
             <button class="resident-update-button">
-              Bilgileri <br />duzenle
+              Bilgileri duzenle
             </button>
           </div>
           <div class="due-div">
@@ -85,16 +87,17 @@
             <span class="Aralik">Aralik</span>
           </div>
           <div class="resident-card-body">
-            <span class="resident-info">isim soyisim telefon</span>
+            <span class="resident-info"></span>
+    <div class="update-res-div">
             <label for="update-name"">Isim Duzenle</label>
-            
             <input type="text" id="update-name">
             <label for="update-tel"">Telefon Duzenle</label>
             <input type="text" id="update-tel">
+        </div>
           </div>
           <div class="resident-card-footer">
             <select name="month" class="due-month">
-              <option value="">Ay Secin</option>
+              <option value="">Ay Sec</option>
               <option value="Ocak">Ocak</option>
               <option value="Subat">Subat</option>
               <option value="Mart">Mart</option>

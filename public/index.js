@@ -2,6 +2,7 @@ import { getExpenses } from "./modules/gete.js";
 import { createExpense } from "./modules/createex.js";
 import { getResident } from "./modules/getre.js";
 import { updateDue } from "./modules/updatedue.js";
+import { updateResButton } from "./modules/updateres.js";
 
 window.addEventListener("load", init);
 function init() {
@@ -19,9 +20,6 @@ function init() {
 
 document
   .querySelector(".resident-update-button")
-  .addEventListener("click", updateResInfo);
+  .addEventListener("click", updateResButton);
 
-function updateResInfo() {
-  document.querySelector("#update-name").style.display = `block`;
-  document.querySelector("#update-tel").style.display = `block`;
-}
+
