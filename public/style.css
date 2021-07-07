@@ -108,3 +108,11 @@
 /* .items span {
 
 } */
+
+#update-name {
+  display: none;
+}
+
+#update-tel {
+  display: none;
+}
