@@ -4,6 +4,9 @@ export async function updateDue() {
   const dueInput = document.querySelector(".due-input");
   const db = firebase.firestore();
   const id = document.querySelector(`.resident-id`);
+  if (dueMonth.value === ``) {
+    return;
+  }
   try {
     await db
       .collection("residents")

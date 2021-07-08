@@ -1,6 +1,6 @@
 export async function getExpenses() {
   (function () {
-    document.querySelector(".ex-box").style.display = "block";
+    document.querySelector(".ex-box").style.display = "flex";
     const expenseMonth = document.querySelector(".expense-month");
     document.querySelector(
       ".items-title"
@@ -8,6 +8,7 @@ export async function getExpenses() {
   })();
 
   (function () {
+    document.querySelector(".expense-total").textContent = ``;
     const itemsSpan = document.querySelectorAll(".items span");
     itemsSpan.forEach((item) => {
       item.remove();
@@ -25,6 +26,9 @@ export async function getExpenses() {
     const expenseMonth = document.querySelector(".expense-month");
     const expSum = document.querySelector(".expense-total");
     const db = firebase.firestore();
+    if (expenseMonth.value === ``) {
+      return;
+    }
     let expenses = await db
       .collection("expenses")
       .doc(`2021`)
@@ -32,7 +36,7 @@ export async function getExpenses() {
       .get();
     let sum = 0;
     expenses.forEach((doc) => {
-      sum = sum + Number(doc.data().key);
+      sum += Number(doc.data().key);
       expSum.textContent = `Toplam: ${sum}`;
       createSpan(doc);
     });

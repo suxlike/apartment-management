@@ -1,6 +1,20 @@
+function createSpan(rIds, r, i) {
+  const items = document.querySelector(".income-list");
+  let spanEle = document.createElement("span");
+  items.append(spanEle);
+  const text = `${rIds[i]}: ${r.data().due}`;
+  spanEle.textContent = text.toUpperCase();
+}
+
 export async function getIncomes() {
   const db = firebase.firestore();
   const month = document.querySelector(`.income-month`);
+
+  if (month.value === ``) {
+    document.querySelector(".incomes").textContent = `Ay Sec`;
+    return;
+  }
+  document.querySelector(".incomes-title").textContent = `${month.value}`;
   const rIds = [
     "a1",
     "a2",
@@ -78,6 +92,10 @@ export async function getIncomes() {
           .get();
         sum += Number(r.data().due);
         document.querySelector(".incomes").textContent = `Toplam: ${sum}`;
+        if (Number(r.data().due > 0)) {
+          createSpan(rIds, r, i);
+          console.log(`${rIds[i]}: ${r.data().due}`);
+        }
       }
       gr();
     }

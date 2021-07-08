@@ -12,6 +12,7 @@
   <body>
     <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-auth.js"></script>
     <script>
       // Your web app's Firebase configuration
       const firebaseConfig = {
@@ -32,7 +33,7 @@
           <div class="set-expense-div">
             <h1>Giderler</h1>
             <select name="month" class="expense-month">
-              <option value="">Ay Secin</option>
+              <option value="">Ay Sec</option>
               <option value="Ocak">Ocak</option>
               <option value="Subat">Subat</option>
               <option value="Mart">Mart</option>
@@ -55,16 +56,11 @@
           </div>
           </div>
           <div class="expense-items-div">
-            <span class="items-title">Ay Secin</span>
+            <span class="items-title">Ay Sec</span>
             <div class="items">
-            <span>ekemk 20420</span>
-            <span>ekemk 20420</span>
-            <span>ekemk 20420</span>
-            <span>ekemk 20420</span>
-            <span>ekemk 20420</span>
-            <span>ekemk 20420</span>
+
         </div>
-            <span class="expense-total">Toplam</span>
+            <span class="expense-total"></span>
             
           </div>
         </div>
@@ -127,7 +123,8 @@
       </div>
       <div class="income-div">
           <div class="income-card">
-              <span class="income-title">Gelirler</span>
+              <div class="get-income-div">
+              <h1>Gelirler</h1>
             <select name="month" class="income-month">
                 <option value="">Ay Sec</option>
                 <option value="Ocak">Ocak</option>
@@ -144,6 +141,11 @@
                 <option value="Aralik">Aralik</option>
               </select>
               <div class="incomes">Toplam Gelir</div>
+            </div>
+            <div class="income-list-div">
+              <span class="incomes-title">Ay Sec</span>
+              <div class="income-list"></div>
+          </div>
           </div>
       </div>
     </div>
