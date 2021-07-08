@@ -7,7 +7,7 @@ export async function getExpenses() {
       ".items-title"
     ).textContent = `${expenseMonth.value}`;
   })();
-//remove existing elements
+  //remove existing elements
   (function () {
     document.querySelector(".expense-total").textContent = ``;
     const itemsSpan = document.querySelectorAll(".items span");
@@ -20,7 +20,7 @@ export async function getExpenses() {
     const items = document.querySelector(".items");
     const spanEle = document.createElement("span");
     items.append(spanEle);
-    spanEle.textContent = `${doc.id} ${doc.data().key}`;
+    spanEle.textContent = `${doc.id}: ${doc.data().key}`;
   }
 
   try {
