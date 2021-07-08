@@ -1,4 +1,5 @@
 export async function getExpenses() {
+  // display selected month
   (function () {
     document.querySelector(".ex-box").style.display = "flex";
     const expenseMonth = document.querySelector(".expense-month");
@@ -6,7 +7,7 @@ export async function getExpenses() {
       ".items-title"
     ).textContent = `${expenseMonth.value}`;
   })();
-
+//remove existing elements
   (function () {
     document.querySelector(".expense-total").textContent = ``;
     const itemsSpan = document.querySelectorAll(".items span");

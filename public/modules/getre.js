@@ -16,6 +16,7 @@ export async function getResident() {
     residentName.textContent = `${r.data().name}`;
     residentTel.textContent = `${r.data().tel}`;
   } catch (err) {
+    id.textContent = "Bulunamadi";
     console.log("Error getting document:", err);
   }
   getDues();

@@ -5,6 +5,7 @@ import { updateDue } from "./updatedue.js";
 import { updateResButton } from "./updateres.js";
 import { show } from "./duebutton.js";
 import { getIncomes } from "./getincomes.js";
+import { login } from "./signin.js";
 
 export function init() {
   document
@@ -22,4 +23,5 @@ export function init() {
     .addEventListener("click", updateResButton);
   document.querySelector(".due-month").addEventListener("input", show);
   document.querySelector(".income-month").addEventListener("input", getIncomes);
+  document.querySelector(".login-button").addEventListener("click", login);
 }

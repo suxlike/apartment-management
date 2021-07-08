@@ -26,7 +26,13 @@
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
     </script>
+<div class="login-div"><div class="login-card">
+  <span class="log">Sifre Gir</span>
+  <input id="login-pw" type="text">
+  <button class="login-button">Giris Yap</button>
+  <span class="err"></span>
 
+</div></div>
     <div class="content">
       <div class="expense-div">
         <div class="expense-card">
@@ -66,7 +72,7 @@
         </div>
       </div>
       <div class="resident-div">
-        <label for="resident-input">No</label>
+        <label for="resident-input"><strong>No</strong></label>
         <input id="resident-input" type="text" />
         <button class="get-resident-button">Getir</button>
         <div class="resident-card">
@@ -142,10 +148,12 @@
                 <option value="Aralik">Aralik</option>
               </select>
               <div class="incomes">Toplam Gelir</div>
+              <h2>Odeme yapanlar</h2>
+              <div class="income-list"></div>
             </div>
             <div class="income-list-div">
               <span class="incomes-title">Ay Sec</span>
-              <div class="income-list"></div>
+              <div class="not-paid-list"></div>
           </div>
           </div>
       </div>

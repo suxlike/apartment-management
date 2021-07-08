@@ -172,7 +172,7 @@ const rIds = [
 //         .doc(`${id}`)
 //         .collection("2021")
 //         .doc(`${rMonths[i]}`)
-//         .set({ due: 0 });
+//         .set({ due: "0" });
 //     }
 //   } catch (err) {
 //     console.log(err);

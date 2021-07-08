@@ -1,12 +1,25 @@
 function createSpan(rIds, r, i) {
-  const items = document.querySelector(".income-list");
-  let spanEle = document.createElement("span");
-  items.append(spanEle);
+  const incomeList = document.querySelector(".income-list");
+  const createSpanE = document.createElement("span");
+  incomeList.append(createSpanE);
   const text = `${rIds[i]}: ${r.data().due}`;
-  spanEle.textContent = text.toUpperCase();
+  createSpanE.textContent = text.toUpperCase();
 }
-
+function createSpanN(rIds, r, i) {
+  const notPaidList = document.querySelector(".not-paid-list");
+  const createSpanE = document.createElement("span");
+  notPaidList.append(createSpanE);
+  const text = `${rIds[i]}`;
+  createSpanE.textContent = text.toUpperCase();
+}
+function clearSpan() {
+  const incList = document.querySelectorAll(".income-list span");
+  incList.forEach((item) => item.remove());
+  const NotPaidList = document.querySelectorAll(".not-paid-list span");
+  NotPaidList.forEach((item) => item.remove());
+}
 export async function getIncomes() {
+  clearSpan();
   const db = firebase.firestore();
   const month = document.querySelector(`.income-month`);
 
@@ -14,7 +27,9 @@ export async function getIncomes() {
     document.querySelector(".incomes").textContent = `Ay Sec`;
     return;
   }
-  document.querySelector(".incomes-title").textContent = `${month.value}`;
+  document.querySelector(
+    ".incomes-title"
+  ).textContent = `${month.value} Odeme Yapmayanlar`;
   const rIds = [
     "a1",
     "a2",
@@ -83,7 +98,7 @@ export async function getIncomes() {
   let sum = 0;
   try {
     for (let i = 0; i < rIds.length; i++) {
-      async function gr() {
+      async function getR() {
         let r = await db
           .collection("residents")
           .doc(`${rIds[i]}`)
@@ -92,12 +107,13 @@ export async function getIncomes() {
           .get();
         sum += Number(r.data().due);
         document.querySelector(".incomes").textContent = `Toplam: ${sum}`;
-        if (Number(r.data().due > 0)) {
+        if (Number(r.data().due) > 0) {
           createSpan(rIds, r, i);
-          console.log(`${rIds[i]}: ${r.data().due}`);
+        } else if (Number(r.data().due) === 0) {
+          createSpanN(rIds, r, i);
         }
       }
-      gr();
+      getR();
     }
   } catch (err) {
     console.log(err);

@@ -1,10 +1,12 @@
 export async function getDues() {
   const db = firebase.firestore();
-  const id = document.querySelector(`.resident-id`);
+  const id = document
+    .querySelector(`.resident-id`)
+    .textContent.toLocaleLowerCase();
   try {
     const dues = await db
       .collection("residents")
-      .doc(`${id.textContent}`)
+      .doc(`${id}`)
       .collection("2021")
       .get();
     dues.forEach((doc) => {
