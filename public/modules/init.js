@@ -6,8 +6,10 @@ import { updateResButton } from "./updateres.js";
 import { show } from "./duebutton.js";
 import { getIncomes } from "./getincomes.js";
 import { login } from "./signin.js";
+import { createBlock } from "./createblock.js";
 
 export function init() {
+  createBlock();
   document
     .querySelector(".get-resident-button")
     .addEventListener("click", getResident);

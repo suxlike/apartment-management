@@ -1,3 +1,4 @@
+import { getIncomes } from "./getincomes.js";
 import { getDues } from "./getdues.js";
 export async function updateDue() {
   const dueMonth = document.querySelector(".due-month");
@@ -20,5 +21,6 @@ export async function updateDue() {
   } catch (err) {
     console.log("Error getting document:", err);
   }
+  getIncomes();
   getDues();
 }
