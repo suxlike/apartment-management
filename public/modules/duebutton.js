@@ -1,6 +1,6 @@
 export function show(e) {
-  const button = document.querySelector(".due-button");
   if (e.target.value !== "") {
-    button.style.display = "block";
+    document.querySelector(".due-button").style.display = "block";
+    document.querySelector(".due-input").style.display = "block";
   }
 }

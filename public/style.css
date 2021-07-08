@@ -19,6 +19,9 @@
   justify-content: center;
 }
 .resident-div {
+  border: 1px solid black;
+  width: 500px;
+  height: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,17 +32,21 @@
   margin: 6px;
   padding: 6px;
 }
-.resident-input {
+#resident-input {
   width: 40px;
 }
 
 .resident-card {
+  height: 303px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  width: 360px;
-  height: 240px;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   border: 2px solid black;
+}
+.due-div span {
+  border: 1px solid black;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 .resident-card-header {
@@ -59,29 +66,36 @@
 .due-div {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   grid-column: 3/4;
-  grid-row: 1/4;
+  grid-row: 1/5;
   border-left: 1px solid black;
 }
 .resident-card-body {
   grid-column: 1/3;
-  grid-row: 2/3;
+  grid-row: 2/4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .due-title {
   font-weight: 600;
 }
 .resident-card-footer {
   grid-column: 1/3;
-  grid-row: 3/4;
+  grid-row: 4/5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .due-input {
+  margin: 5px;
+  display: none;
   width: 60px;
 }
 
-.expense-div {
-  border: 1px solid black;
-}
 .expense-card {
+  border: 1px solid black;
   width: 500px;
   height: 400px;
   display: grid;
@@ -114,15 +128,14 @@
 }
 
 .update-res-div {
+  flex-direction: column;
+  align-items: center;
   display: none;
 }
 .ex-box {
   display: none;
   flex-direction: column;
   align-items: center;
-}
-.resident-card-footer {
-  display: none;
 }
 .expense-total {
   font-size: 20px;
@@ -189,9 +202,23 @@
 }
 .income-list {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 1px;
 }
 span {
   font-size: 16px;
   font-weight: 400;
+}
+.income-list span {
+  border: 1px solid black;
+}
+.due-month {
+  display: none;
+}
+.resident-name,
+.resident-tel {
+  margin: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
 }
