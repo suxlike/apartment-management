@@ -21,8 +21,8 @@ export async function updateResSave() {
   } catch (err) {
     console.log("Error writing document: ", err);
   }
-  // nameInput.value = null;
-  // telInput.value = null;
+  nameInput.value = ``;
+  telInput.value = ``;
   button.textContent = `Bilgileri Duzenle`;
   button.addEventListener("click", updateResButton);
   getResident();

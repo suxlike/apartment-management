@@ -64,19 +64,19 @@ const rIds = [
   "c15",
 ];
 
-// // async function RESET_DATABASE_ID(rIds) {
-// //   const db = firebase.firestore();
-// //   try {
-// //     for (let i = 0; i < rIds.length; i++) {
-// //       await db
-// //         .collection("residents")
-// //         .doc(`${rIds[i]}`)
-// //         .set({ name: "Ad Soyad", tel: "05354445566" });
-// //     }
-// //   } catch (err) {
-// //     console.log(err);
-// //   }
-// // }
+// export async function RESET_DATABASE_ID() {
+//   const db = firebase.firestore();
+//   try {
+//     for (let i = 0; i < rIds.length; i++) {
+//       await db
+//         .collection("residents")
+//         .doc(`${rIds[i]}`)
+//         .set({ name: "Ad Soyad", tel: "" });
+//     }
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
 
 // export function RESET_DATABASE() {
 //   const rIds = [
