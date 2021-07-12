@@ -109,7 +109,7 @@ export async function getIncomes() {
         document.querySelector(".incomes").textContent = `Toplam: ${sum}`;
         if (Number(r.data().due) > 0) {
           createSpan(rIds, r, i);
-        } else if (Number(r.data().due) === 0) {
+        } else if (Number(r.data().due) <= 0) {
           createSpanN(rIds, r, i);
         }
       }

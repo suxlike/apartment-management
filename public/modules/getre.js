@@ -6,6 +6,7 @@ export async function getResident() {
   const inputValue = document
     .querySelector("#resident-input")
     .value.toLowerCase();
+  const landlordName = document.querySelector(".landlord-name");
   const residentName = document.querySelector(".resident-name");
   const residentTel = document.querySelector(".resident-tel");
   const docRef = db.collection("residents").doc(`${inputValue}`);
@@ -15,6 +16,7 @@ export async function getResident() {
     id.textContent = r.id.toUpperCase();
     residentName.textContent = `${r.data().name}`;
     residentTel.textContent = `${r.data().tel}`;
+    landlordName.textContent = `${r.data().lord}`;
   } catch (err) {
     id.textContent = "Bulunamadi";
     console.log("Error getting document:", err);

@@ -1,5 +1,6 @@
 import { getResident } from "./getre.js";
 export async function updateResSave() {
+  const lordInput = document.querySelector("#update-lord");
   const nameInput = document.querySelector("#update-name");
   const telInput = document.querySelector("#update-tel");
   console.log(nameInput.value);
@@ -14,6 +15,7 @@ export async function updateResSave() {
       .collection("residents")
       .doc(`${input}`)
       .set({
+        lord: `${lordInput.value}`,
         name: `${nameInput.value}`,
         tel: `${telInput.value}`,
       });
@@ -21,6 +23,7 @@ export async function updateResSave() {
   } catch (err) {
     console.log("Error writing document: ", err);
   }
+  lordInput.value = ``;
   nameInput.value = ``;
   telInput.value = ``;
   button.textContent = `Bilgileri Duzenle`;
