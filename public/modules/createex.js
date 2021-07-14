@@ -18,4 +18,6 @@ export async function createExpense() {
     console.log("Error writing document: ", err);
   }
   getExpenses();
+  expenseDocInput.value = ""
+  expenseKeyInput.value= ""
 }

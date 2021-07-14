@@ -23,15 +23,25 @@ body {
   grid-template-columns: 700px 500px;
   grid-template-rows: 400px 400px 400px;
 }
-/* .cash-div {
+.cash-div {
   grid-row: 3/5;
   grid-column: 1/3;
-  border-radius: 10px;
   border: 1px solid black;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-} */
+  grid-template-columns: 420px 800px;
+}
+.get-cash-box {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 0.25fr 1fr 3fr 1fr 1fr 1fr;
+  grid-template-rows: repeat(auto-fill, 400px);
+}
+.div-set-cash {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .resident-div {
   justify-content: center;
   grid-row: 1/2;
@@ -104,7 +114,9 @@ body {
   display: none;
   width: 60px;
 }
-
+select {
+  padding: 5px;
+}
 .expense-card {
   border-radius: 10px;
   border: 1px solid black;
@@ -299,9 +311,48 @@ h2 {
   border: 1px solid black;
 }
 .getres-box {
-  margin-left: 50px;
-  margin-right: 50px;
+  /* margin-left: 50px;
+  margin-right: 50px; */
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.set-cash-div {
+  /* display: flex; */
+  width: 300px;
+}
+.cash-set-box {
+  flex-direction: column;
+  display: none;
+}
+#getDate,
+#getDescription,
+#getIncrease,
+#getDecrease,
+#getBalance {
+  display: flex;
+  flex-direction: column;
+}
+.cash-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+.get-cash-box button {
+  width: 24px;
+}
+.debtors {
+  border-left: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 240px;
+}
+.debtors-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 1px;
+}
+.debtors-box span {
+  border: 1px solid black;
 }

@@ -136,6 +136,7 @@
           </div>
         </div>
       </div>
+      <div class="debtors"><div class="debtors-box"></div></div>
     </div>
       <div class="income-div">
           <div class="income-card">
@@ -166,7 +167,57 @@
           </div>
           </div>
       </div>
-      <div class="cash-div"></div>
+      <div class="cash-div">
+        <div class="div-set-cash">
+          <div class="set-cash-div">
+            <h1>Kasa</h1>
+            <select name="month" class="cash-month">
+              <option value="">Ay Sec</option>
+              <option value="Ocak">Ocak</option>
+              <option value="Subat">Subat</option>
+              <option value="Mart">Mart</option>
+              <option value="Nisan">Nisan</option>
+              <option value="Mayis">Mayis</option>
+              <option value="Haziran">Haziran</option>
+              <option value="Temmuz">Temmuz</option>
+              <option value="Agustos">Agustos</option>
+              <option value="Eylul">Eylul</option>
+              <option value="Ekim">Ekim</option>
+              <option value="Kasim">Kasim</option>
+              <option value="Aralik">Aralik</option>
+            </select>
+            <div class="cash-set-box">
+            <label for="cash-date-input">Tarih</label>
+            <input id="cash-date-input" type="text"maxlength="20">
+            <label for="cash-desc-input">Aciklama</label>
+            <input id="cash-desc-input" type="text"maxlength="40">
+            <label for="cash-key-input">Miktar</label>
+            <input id="cash-key-input" type="number"maxlength="6">
+            <div>
+              <input type="radio" id="increase" name="cash" value="inc"
+                     checked>
+              <label for="increase">Artis</label>
+            </div>
+            <div>
+              <input type="radio" id="decrease" name="cash" value="dec">
+              <label for="decrease">Azalis</label>
+            </div>
+            <button class="create-cash">Olustur</button>
+          </div>
+          </div>
+        </div>
+        <div class="div-cash-div">
+          <span class="cash-title">Ay Sec</span>
+          <div class="get-cash-box">
+            <div id="delete"><h3>▒▒</h3></div>
+            <div id="getDate"><h3>Tarih</h3></div>
+            <div id="getDescription"><h3>Aciklama</h3></div>
+            <div id="getIncrease"><h3>Artis</h3></div>
+            <div id="getDecrease"><h3>Azalis</h3></div>
+            <div id="getBalance"><h3>Bakiye</h3><span id="balance">bakiye</span></div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>

@@ -7,7 +7,8 @@ import { show } from "./duebutton.js";
 import { getIncomes } from "./getincomes.js";
 import { login } from "./signin.js";
 import { createBlock } from "./createblock.js";
-
+import { createCash } from "./setcash.js";
+import { getCash } from "./getcash.js";
 export function init() {
   createBlock();
   document
@@ -26,4 +27,6 @@ export function init() {
   document.querySelector(".due-month").addEventListener("input", show);
   document.querySelector(".income-month").addEventListener("input", getIncomes);
   document.querySelector(".login-button").addEventListener("click", login);
+  document.querySelector(".create-cash").addEventListener("click", createCash);
+  document.querySelector(".cash-month").addEventListener("click", getCash);
 }
