@@ -8,7 +8,9 @@ export async function getCash() {
   //remove existing elements
   (function () {
     //   document.querySelector(".expense-total").textContent = ``;
-    const itemsSpan = document.querySelectorAll(".get-cash-box span,.get-cash-box button");
+    const itemsSpan = document.querySelectorAll(
+      ".get-cash-box span,.get-cash-box button"
+    );
     itemsSpan.forEach((item) => {
       item.remove();
     });
@@ -32,38 +34,34 @@ export async function getCash() {
     decDiv.append(decreaseSpan);
     decreaseSpan.textContent = `${doc.data().decrease}`;
     const button = document.createElement("button");
-    const deleteDiv = document.querySelector("#delete")
+    const deleteDiv = document.querySelector("#delete");
     deleteDiv.append(button);
     button.textContent = "Sil";
     const del = async function (doc) {
-        try {
-            console.log(doc.id)
-            const expenseMonth = document.querySelector(".cash-month");
-            const db = firebase.firestore();
-            let toDel = await db
-            .collection("cash")
-            .doc(`2021`)
-            .collection(`${expenseMonth.value}`)
-            .doc(`${doc.id}`)
-            .delete();
-        } catch (err) {
-            console.log(err);
-        }
-            //   document.querySelector(".expense-total").textContent = ``;
-            const items = document.querySelectorAll(".get-cash-box span,.get-cash-box button");
-            items.forEach((item) => {
-              item.remove();
-            });
-    }
-    button.addEventListener("click",function(){ del(doc); });
+      try {
+        console.log(doc.id);
+        const expenseMonth = document.querySelector(".cash-month");
+        const db = firebase.firestore();
+        let toDel = await db
+          .collection("cash")
+          .doc(`2021`)
+          .collection(`${expenseMonth.value}`)
+          .doc(`${doc.id}`)
+          .delete();
+      } catch (err) {
+        console.log(err);
+      }
+      getCash();
+    };
+    button.addEventListener("click", function () {
+      del(doc);
+    });
   }
-  
-
   try {
     const expenseMonth = document.querySelector(".cash-month");
-      const balance = document.createElement("span");
-      const balanceDiv = document.querySelector("#getBalance")
-      balanceDiv.append(balance);
+    const balance = document.createElement("span");
+    const balanceDiv = document.querySelector("#getBalance");
+    balanceDiv.append(balance);
     const db = firebase.firestore();
     if (expenseMonth.value === ``) {
       return;
@@ -73,9 +71,9 @@ export async function getCash() {
       .doc(`2021`)
       .collection(`${expenseMonth.value}`)
       .get();
-      let sum = 0;
+    let sum = 0;
     cash.forEach((doc) => {
-      sum += Number(doc.data().increase)-Number(doc.data().decrease)
+      sum += Number(doc.data().increase) - Number(doc.data().decrease);
       balance.textContent = ` ${sum}`;
       createSpan(doc);
     });

@@ -28,5 +28,5 @@ export function init() {
   document.querySelector(".income-month").addEventListener("input", getIncomes);
   document.querySelector(".login-button").addEventListener("click", login);
   document.querySelector(".create-cash").addEventListener("click", createCash);
-  document.querySelector(".cash-month").addEventListener("click", getCash);
+  document.querySelector(".cash-month").addEventListener("input", getCash);
 }

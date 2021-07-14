@@ -178,3 +178,19 @@ const rIds = [
 //     console.log(err);
 //   }
 // }
+
+// export async function ADD_Debt() {
+//   const db = firebase.firestore();
+//   try {
+//     for (let i = 0; i < rIds.length; i++) {
+//       await db
+//         .collection("residents")
+//         .doc(rIds[i])
+//         .collection("2021")
+//         .doc("Borc")
+//         .set({ due: "0" });
+//     }
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }

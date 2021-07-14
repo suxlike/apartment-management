@@ -1,3 +1,4 @@
+import { getDebtors } from "./getdebtors.js";
 export async function login() {
   const email = "admin@admin.com";
   const password = document.querySelector("#login-pw").value;
@@ -5,6 +6,7 @@ export async function login() {
     await firebase.auth().signInWithEmailAndPassword(email, password);
     document.querySelector(".content").style.display = "grid";
     document.querySelector(".login-div").style.display = "none";
+    getDebtors();
   } catch (error) {
     let errorCode = error.code;
     let errorMessage = error.message;
